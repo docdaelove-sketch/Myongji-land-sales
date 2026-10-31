@@ -46,6 +46,14 @@
       -webkit-text-fill-color: transparent;
     }
 
+    header {
+      height: 64px !important;
+      max-height: 64px !important;
+    }
+    header h1, header p {
+      white-space: nowrap !important;
+    }
+
     .custom-scrollbar::-webkit-scrollbar { height: 6px; }
     .custom-scrollbar::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
 
@@ -132,44 +140,38 @@
 
   <!-- Header -->
   <header class="bg-theme-dark-red text-white sticky top-0 z-50 shadow-2xl border-b border-yellow-700/40 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start">
-        <div class="flex items-center gap-3">
-          <div class="bg-gradient-to-r from-yellow-600 to-yellow-400 text-[#4a0905] font-black text-xl px-3 py-1 rounded shadow-inner whitespace-nowrap">
-            VIP ASSET
-          </div>
-          <div>
-            <h1 data-i18n="hdr_title" class="text-base sm:text-lg md:text-xl font-bold tracking-tight text-yellow-50 leading-tight">
-              부산 명지 스마트시티 프리미엄 상업 부지
-            </h1>
-            <p data-i18n="hdr_subtitle" class="text-xs text-yellow-200/80 tracking-widest uppercase">
-              100% Freehold Commercial Land
-            </p>
-          </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+      <!-- Left Logo & Title -->
+      <div class="flex items-center gap-2.5 shrink-0">
+        <div class="bg-gradient-to-r from-yellow-600 to-yellow-400 text-[#4a0905] font-black text-sm sm:text-base px-2.5 py-1 rounded shadow-inner whitespace-nowrap">
+          VIP ASSET
         </div>
-
-        <!-- 모바일 화면용 언어 버튼 (작은 화면에서 즉시 접근 가능) -->
-        <div class="flex md:hidden items-center bg-black/50 border border-yellow-500/50 p-0.5 rounded-full shadow-inner">
-          <button type="button" onclick="setLanguage('ko')" class="lang-btn px-2.5 py-0.5 text-xs font-bold rounded-full" data-lang-target="ko">KR</button>
-          <button type="button" onclick="setLanguage('en')" class="lang-btn px-2.5 py-0.5 text-xs font-bold rounded-full" data-lang-target="en">EN</button>
+        <div class="flex flex-col justify-center">
+          <h1 data-i18n="hdr_title" class="text-xs sm:text-sm md:text-base font-bold tracking-tight text-yellow-50 whitespace-nowrap leading-tight">
+            부산 명지 스마트시티 프리미엄 부지
+          </h1>
+          <p data-i18n="hdr_subtitle" class="text-[10px] sm:text-[11px] text-yellow-200/80 tracking-widest uppercase whitespace-nowrap leading-tight">
+            100% Freehold Commercial Land
+          </p>
         </div>
       </div>
 
-      <div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-end">
-        <nav class="flex gap-2 sm:gap-4 overflow-x-auto text-xs sm:text-sm font-medium pb-1 md:pb-0 custom-scrollbar whitespace-nowrap justify-center flex-1 md:flex-initial">
-          <a href="#sec-why-korea-busan" data-i18n="nav_why" class="px-2 py-1 hover:text-theme-gold transition text-yellow-100">Why Korea? Why Busan?</a>
-          <a href="#sec-solution" data-i18n="nav_solution" class="px-2 py-1 hover:text-theme-gold transition text-yellow-100">핵심 솔루션 & 입지</a>
-          <a href="#sec-bm" data-i18n="nav_bm" class="px-2 py-1 hover:text-theme-gold transition text-yellow-100">수익 모델</a>
-          <a href="#sec-legal" data-i18n="nav_legal" class="px-2 py-1 hover:text-theme-gold transition text-yellow-100">영구소유권·비자</a>
-          <a href="#sec-contact" data-i18n="nav_contact" class="px-3 py-1 border border-yellow-500 hover:bg-yellow-500/20 rounded-md transition text-theme-gold font-bold">VIP 상담</a>
+      <!-- Right Nav & Language Switcher -->
+      <div class="flex items-center gap-2 lg:gap-4 overflow-hidden">
+        <nav class="flex gap-2 sm:gap-3 lg:gap-4 overflow-x-auto text-xs sm:text-sm font-medium custom-scrollbar whitespace-nowrap">
+          <a href="#sec-why-korea-busan" data-i18n="nav_why" class="px-1.5 py-1 hover:text-theme-gold transition text-yellow-100">Why Korea & Busan?</a>
+          <a href="#sec-solution" data-i18n="nav_solution" class="px-1.5 py-1 hover:text-theme-gold transition text-yellow-100">핵심 솔루션 & 입지</a>
+          <a href="#sec-bm" data-i18n="nav_bm" class="px-1.5 py-1 hover:text-theme-gold transition text-yellow-100">수익 모델</a>
+          <a href="#sec-legal" data-i18n="nav_legal" class="px-1.5 py-1 hover:text-theme-gold transition text-yellow-100">영구소유권·비자</a>
+          <a href="#sec-contact" data-i18n="nav_contact" class="px-2.5 py-1 border border-yellow-500 hover:bg-yellow-500/20 rounded-md transition text-theme-gold font-bold">VIP 상담</a>
         </nav>
 
-        <!-- 데스크톱 우측 상단 언어 전환 버튼 -->
-        <div class="hidden md:flex items-center gap-1 bg-black/60 border border-yellow-500/60 p-1 rounded-full shadow-inner ml-2">
-          <button type="button" onclick="setLanguage('ko')" class="lang-btn px-3 py-1 text-xs font-bold rounded-full flex items-center gap-1" data-lang-target="ko">
+        <!-- 언어 전환 버튼 -->
+        <div class="flex items-center gap-0.5 bg-black/60 border border-yellow-500/60 p-0.5 rounded-full shadow-inner shrink-0 ml-1">
+          <button type="button" onclick="setLanguage('ko')" class="lang-btn px-2.5 py-0.5 text-xs font-bold rounded-full flex items-center gap-1" data-lang-target="ko">
             <span>🇰🇷</span> KR
           </button>
-          <button type="button" onclick="setLanguage('en')" class="lang-btn px-3 py-1 text-xs font-bold rounded-full flex items-center gap-1" data-lang-target="en">
+          <button type="button" onclick="setLanguage('en')" class="lang-btn px-2.5 py-0.5 text-xs font-bold rounded-full flex items-center gap-1" data-lang-target="en">
             <span>🇺🇸</span> EN
           </button>
         </div>
@@ -1101,13 +1103,13 @@
 
       en: {
         page_title: "Busan Myeongji Prime Commercial Land | 100% Fee-Simple Freehold & VIP Asset",
-        hdr_title: "Busan Myeongji Smart City Premier Commercial Land",
-        hdr_subtitle: "100% Fee-Simple Freehold Commercial Asset",
+        hdr_title: "Busan Myeongji Prime Commercial Land",
+        hdr_subtitle: "100% Freehold Commercial Land",
         nav_why: "Why Korea & Busan?",
-        nav_solution: "Prime Location & Site",
+        nav_solution: "Prime Location",
         nav_bm: "Business Models",
-        nav_legal: "Title & Investor Visa",
-        nav_contact: "Private Inquiry",
+        nav_legal: "Freehold & Visa",
+        nav_contact: "VIP Inquiry",
 
         hero_badge: "📍 3237-9 Myeongji-dong, Gangseo-gu, Busan (Commercial Zone: 21,101 sq ft / 1,960.4 ㎡ / 593 pyeong)",
         hero_title_line1: "Not Land Leased, But Land Bequeathed",
